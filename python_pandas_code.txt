@@ -1,0 +1,212 @@
+1. What is a DataFrame in Python?
+   A DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. It is similar to a spreadsheet or SQL table.
+
+   How do you import the pandas library and what alias is commonly used?
+   example: import pandas as pd
+
+2. What function do you use to read a CSV file into a DataFrame?
+   You use the `pd.read_csv('filename.csv')` function from pandas to read a CSV file into a DataFrame.
+   example: df=pd.read_csv('filename.csv')
+
+3. How do you select a column in a DataFrame?
+   You can select a column using its label in one of two ways: `df['column_name']` or `df.column_name` (if the column name is a valid Python variable name).
+   example: df['STATUS'] or df.STATUS
+
+4. How can you add a new column to an existing DataFrame?
+   You can add a new column by assigning it directly to the DataFrame like `df['new_column'] = list_of_values`.
+   example: df['new_column_1']=10
+
+5. How do you filter rows in a DataFrame by a column’s value?
+   You can filter rows by using a boolean condition inside the loc accessor, e.g., `df.loc[df['column'] > 5]`.
+   example: df.loc[df['Data_value'] > 2.1]
+
+6. What is the purpose of the `head()` method in a DataFrame?
+   The `head()` method is used to return the first few rows of the DataFrame, helpful for quickly testing if your DataFrame has the right type of data.
+   example: df.head(), df.head(5)
+
+7. How can you get the statistical summary of a DataFrame?
+   Use the `df.describe()` method, which provides summary statistics of the numerical columns in the DataFrame like count, mean, std, min, max, etc.
+   example: df.describe()
+
+8. How do you check for missing values in a DataFrame?
+   Use the `isna()` or `isnull()` methods to check for missing values, which return a boolean DataFrame showing True where values are missing   
+   example: df.isna(), df.isnull()
+
+10. How do you drop rows with missing values?
+    Use the `dropna()` method to remove rows with at least one column holding missing data.
+    example: df.dropna()
+
+11. How do you replace missing values in a DataFrame?
+    Use the `fillna(value)` method, where `value` is the number or string to replace missing values with.
+    example: df['Data_value'].fillna('2.01',inplace=True) 
+
+12. How can you change the data type of a DataFrame column?
+    Use the `astype()` method, e.g., `df['column'] = df['column'].astype('new_type')`.
+    example: 
+     df['Data_value_str']=df['Data_value']
+     df['Data_value_str'] = df['Data_value_str'].astype('str')  
+     df.dtypes
+
+13. What method would you use to concatenate two DataFrames?
+    Use the `pd.concat()` function to concatenate two or more DataFrames either vertically (default) or horizontally using the `axis` parameter.
+    example: 
+    df1=df.copy()
+    ndf_0=pd.concat([df,df1],axis=0)  ##    vertically
+    ndf_1=pd.concat([df,df1],axis=1)  ##    horizontally
+    df.shape,df1.shape,ndf_0.shape,ndf_1.shape
+
+14. How do you rename columns in a DataFrame?
+    Use the `rename()` method, e.g., `df.rename(columns={'old_name': 'new_name'})`.
+        example: 
+        df=df.rename(columns={'new_column_1': 'new_column_2'})
+        df.columns
+
+15. How do you sort a DataFrame?
+    Use the `sort_values(by='column_name')` method to sort the DataFrame by the specified column.
+    example: 
+    df['Data_value']=df['Data_value'].astype(float)
+    df.sort_values(by='Data_value',ascending=True)
+
+16. What is the difference between the `loc` and `iloc` accessors?
+    `loc` is label-based, which means you use column and row labels to specify what you want to access, whereas `iloc` is integer index-based, so you use numbers to access the rows/columns.
+
+17. How do you slice rows in a DataFrame?
+    Use row indices with slicing notation in `loc` or `iloc`, e.g., `df.iloc[10:20]` to select rows 11 to 20.
+
+18. What does the `groupby()` function do in a DataFrame?
+    The `groupby()` function groups the DataFrame using a specified key and enables you to apply a function to the groups such as sum, count, or mean.
+    example: df.groupby(['Series_title_1'])['Data_value'].sum()
+
+19. How can you save a DataFrame to a CSV file?
+    Use the `to_csv('filename.csv')` method to save the DataFrame to a CSV file.
+    example: df.to_csv('new_filename.csv')
+
+20. How do you merge two DataFrames?
+    Use the `merge()` method, similar to SQL joins, to combine two DataFrames based on a common column or index.
+    example: new_df=pd.merge(df,df1,on=common_col)
+
+21. How can you select multiple columns in a DataFrame?
+    Use double brackets with the column names, as in `df[['column1', 'column2']]`.
+    example: df[['Group','Data_value']].head(5)
+
+22. What method would you use to get the unique values in a DataFrame column?
+   Use the `unique()` method, as in `df['column'].unique()`.
+   example: df['Data_value'].unique()
+
+22. value_counts(): 
+    df['column'].value_counts()
+
+
+23. How do you reverse the order of rows in a DataFrame?
+   Use slicing with negative steps, as in `df[::-1]`.
+
+
+24. How can you calculate the mean of a numerical column?
+   Use the `mean()` method, as in `df['numerical_column'].mean()`.
+   example: df['Data_value'].mean()
+
+25. How do you check the data type of each column in a DataFrame?
+   Use the `dtypes` attribute, as in `df.dtypes`.
+   df.dtypes()
+
+
+26. How do you delete a column from a DataFrame?
+   Use the `drop()` method with the `axis=1` parameter, as in `df.drop('column_name', axis=1)`.
+   example: df=df.drop('new_column_2', axis=1)
+            df.columns   
+
+
+27. How do you get the number of rows and columns in a DataFrame?
+    Use the `shape` attribute, as in `df.shape`.
+    example: df.shape
+
+28. What method is used to randomly sample rows from a DataFrame?
+   Use the `sample()` method, as in `df.sample(n=5)` to sample 5 random rows.
+
+29. How can you create a new column based on values in an existing column?
+    Use a lambda function or define a function and apply it using the `apply()` method, e.g., `df['new_col'] = df['existing_col'].apply(lambda x: x*2)`.
+    example: 
+    df['Data_value_2'] = df['Data_value'].apply(lambda x: x*2)
+    df[['Data_value','Data_value_2']].head(5)
+
+
+32. What method would you use to find all rows where a certain column's value is not null?
+    Use the `notnull()` method in a Boolean condition, as in `df[df['column'].notnull()]`.
+    example: df.shape,df[df['STATUS'].notnull()].shape
+
+33. How can you aggregate data in a DataFrame using multiple functions on multiple columns?
+    Use the `agg()` method, e.g., `df.agg({'col1': ['sum', 'min'], 'col2': ['max', 'mean']})`.
+    example: df.agg({'Data_value': ['sum', 'min','max', 'mean'], 'Data_value_2': ['sum', 'min','max', 'mean']})
+
+34. What is the use of the `iloc` accessor in a DataFrame?
+    The `iloc` accessor is used for positional indexing, allowing you to access rows and columns by integer position.
+    example: df.iloc[5]    ## 5th row ( starting from 0)
+             df.iloc[0,0]  ## 5th row ( starting from 0), 0 column
+
+
+35. How do you save a DataFrame to an Excel file?
+    Use the `to_excel('filename.xlsx')` method.
+    example: df.to_excel('filename.xlsx')
+
+
+36. What method is used to display the last five rows of a DataFrame?
+   Use the `tail()` method, as in `df.tail()`, which defaults to the last five rows.
+   example: df.tail(), df.tail(10)
+
+
+37. How do you set a column as the DataFrame index without creating a new DataFrame?
+   Use the `set_index()` method with the `inplace=True` option, as in `df.set_index('column', inplace=True)`.
+   example:
+    ndf=df.copy()
+    ndf['Series_reference'].value_counts()
+    ndf.set_index('Series_reference', inplace=True)
+    ndf.index
+
+
+38. How do you calculate the sum of a numerical column?
+   Use the `sum()` method, as in `df['numerical_column'].sum()`.
+   example: df['Data_value'].sum()
+
+39. How do you find the columns with the highest correlation in a DataFrame?
+   Use the `corr()` method to get the correlation matrix, then find the pair with the highest correlation value.
+   example: df.corr()
+ 
+
+40. What method would you use to fill missing values with the mean of a column?
+   Use the `fillna()` method with the column's mean, as in `df['column'].fillna(df['column'].mean(), inplace=True)`.
+
+41. How do you remove duplicate rows in a DataFrame?
+    Use the `drop_duplicates()` method, as in `df.drop_duplicates(inplace=True)`.
+    example: df.drop_duplicates(inplace=True)
+
+42. How can you select rows where a column value is in a predefined list?
+    Use the `isin()` method, as in `df[df['column'].isin(value_list)]`.
+    example: 
+    Series_list=['CPIM.SAP0263','CPIM.SAP0139','CPIM.SAP0128','CPIM.SAP0129']
+    df[df['Series_reference'].isin(Series_list)]
+
+
+43. How can you visualize the data distribution of a column in a DataFrame?
+    Use plotting libraries like `matplotlib` or `seaborn` to create histograms or boxplots, e.g., `import seaborn as sns; sns.histplot(df['column'])`.
+    example: import seaborn as sns; sns.histplot(df['Series_reference'])
+
+44. How do you extract the row with the maximum value in a specific column?
+   Use the `idxmax()` method to find the index of the maximum value, and then use `loc` to extract the row, as in `df.loc[df['column'].idxmax()]`.
+   example:  df.loc[df['Data_value'].idxmax()]
+
+45. How do you change the header names of a DataFrame?
+   Use the `columns` attribute, as in `df.columns = ['new_name1', 'new_name2', ...]`.
+   example: df.columns = ['new_name1', 'new_name2', ...]
+
+46. How can you append one DataFrame to another?
+   Use the `append()` method, as in `df1.append(df2, ignore_index=True)`.
+   example: ndf=df.copy()
+            ndf.append(df, ignore_index=True).shape
+
+
+51. How do you calculate the variance of a numerical column?
+    Use the `var()` method, as in `df['numerical_column'].var()`.
+
+
+?52. How can you plot a histogram of a DataFrame column using pandas?
+    Use the `hist()` method directly on a column, as in `df['column'].hist()`.

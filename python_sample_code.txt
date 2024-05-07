@@ -1,0 +1,457 @@
+1. Printing Text
+   print("Hello Python world!")
+
+
+2. Variables and Basic Data Types
+   name = "Alice"
+   age = 30
+   height = 5.5
+   is_adult = True
+   print(name, age, height, is_adult)
+
+   
+3. Basic Arithmetic Operations
+   a = 10
+   b = 3
+   print('Addition:', a + b)
+   print('Subtraction:', a - b)
+   print('Multiplication:', a * b)
+   print('Division:', a / b)
+   print('Floor Division:', a // b)
+   print('Modulus:', a % b)
+   print('Exponentiation:', a  b)
+
+4. Concatenating Strings
+   first_name = "John"
+   last_name = "Doe"
+   full_name = first_name + " " + last_name
+   print("Full Name:", full_name)
+
+   
+5. Simple If Statement
+   age = 18
+   if age >= 18:
+       print("You are an adult.")
+   else:
+       print("You are a minor.")
+
+6. Using a List
+   fruits = ["apple", "banana", "cherry"]
+   for fruit in fruits:
+       print("I like", fruit)
+
+7. Dictionary Basics
+   person = {"name": "Jane", "age": 22, "city": "New York"}
+   print("Name:", person["name"])
+   print("Age:", person["age"])
+
+  
+8. While Loop
+   counter = 1
+   while counter <= 5:
+       print("Counter:", counter)
+       counter += 1
+
+9. For Loop with Range
+   for number in range(1, 6):
+       print("Number:", number)
+
+10. Defining and Calling a Function
+    def greet(name):
+        print("Hello", name + "!")
+    greet("Alice")
+
+11. Using Tuples
+    coordinates = (10, 20)
+    print("X:", coordinates[0])
+    print("Y:", coordinates[1])
+
+12. List Comprehensions
+    squares = [x * x for x in range(10)]
+    print("Squares:", squares)
+
+13. Simple Error Handling
+    try:
+        print(10 / 0)
+    except ZeroDivisionError:
+        print("You can't divide by zero!")
+
+14. Using Modules
+    import math
+    print("Pi is:", math.pi)
+
+15. File Reading
+    with open("hello.txt", "r") as file:
+        content = file.read()
+        print(content)
+
+16. Checking Membership
+    letters = ['a', 'b', 'c', 'd']
+    if 'a' in letters:
+        print("A is in the list")
+
+17. Multiple Conditions
+    age = 25
+    if age > 18 and age < 30:
+        print("Young adult")
+
+18. Defining Classes
+    class Car:
+        def __init__(self, make, year):
+            self.make = make
+            self.year = year
+        def display(self):
+            print("Car:", self.make, self.year)
+    my_car = Car("Toyota", 2020)
+    my_car.display()
+
+19. Lambda Functions
+    double = lambda x: x * 2
+    print("Double of 5 is", double(5))
+
+20. Set Operations
+    a = {1, 2, 3, 4}
+    b = {3, 4, 5, 6}
+    print("Union:", a | b)
+    print("Intersection:", a & b)
+
+21. Checking Even or Odd
+    number = 4
+    if number % 2 == 0:
+        print("This is an even number.")
+    else:
+        print("This is an odd number.")
+
+22. Calculating the Sum of List Elements
+    numbers = [1, 2, 3, 4, 5]
+    total = sum(numbers)
+    print("Total:", total)
+
+23. Reversing a String
+    text = "hello"
+    reversed_text = text[::-1]
+    print("Reversed:", reversed_text)
+    
+24. Finding the Largest Number
+    numbers = [10, 50, 30, 20, 70]
+    largest = max(numbers)
+    print("Largest number is:", largest)
+
+25. Simple User Input
+    name = input("Enter your name: ")
+    print("Hello", name)
+
+26. Breaking Out of a Loop
+    for i in range(1, 11):
+        if i == 6:
+            break
+        print(i)
+
+27. Continuing in a Loop
+    for i in range(1, 11):
+        if i % 2 == 0:
+            continue
+        print(i)
+
+28. Using Enumerate in Loops
+    fruits = ["apple", "banana", "cherry"]
+    for index, fruit in enumerate(fruits):
+        print(index, fruit)
+
+29. Adding Key-Value Pairs to a Dictionary
+    dict = {}
+    dict["name"] = "John"
+    dict["age"] = 25
+    print(dict)
+
+30. Removing Elements from a List
+    fruits = ["apple", "banana", "cherry"]
+    fruits.remove("banana")
+    print(fruits)
+
+31. Checking if a Key Exists in a Dictionary
+    dict = {'name': 'John', 'age': 25}
+    key = 'name'
+    if key in dict:
+        print("Key exists")
+    else:
+        print("Key does not exist")
+
+32. Sorting a List
+    numbers = [5, 2, 9, 1, 5, 6]
+    sorted_numbers = sorted(numbers)
+    print("Sorted list:", sorted_numbers)
+
+33. Finding the Length of a List
+    fruits = ["apple", "banana", "cherry"]
+    print("Number of fruits:", len(fruits))
+
+34. Slicing a List
+    numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print("Middle slice:", numbers[3:8])
+
+35. Concatenating Two Lists
+    list1 = [1, 2, 3]
+    list2 = [4, 5, 6]
+    combined_list = list1 + list2
+    print("Combined List:", combined_list)
+
+36. Multiplying Elements of a List
+    numbers = [1, 2, 3, 4]
+    doubled_numbers = [num * 2 for num in numbers]
+    print("Doubled numbers:", doubled_numbers)
+
+37. Using Sets to Remove Duplicates
+    numbers = [1, 2, 2, 3, 4, 4, 5]
+    unique_numbers = set(numbers)
+    print("Unique numbers:", unique_numbers)
+
+38. Basic File Writing
+    with open("sample.txt", "w") as file:
+        file.write("Hello Python\n")
+
+39. Basic File Reading
+    with open("sample.txt", "r") as file:
+        content = file.read()
+        print(content)
+
+40. Using a Dictionary Comprehension
+    squares = {x: x*x for x in range(6)}
+    print("Square numbers:", squares)
+
+41. Simple Class Inheritance
+    class Animal:
+        def speak(self):
+            print("This animal speaks")
+    class Dog(Animal):
+        def speak(self):
+            print("The dog barks")
+    pet = Dog()
+    pet.speak()
+
+42. Using a Class and Instance Variables
+    class Car:
+        def __init__(self, brand, model):
+            self.brand = brand
+            self.model = model
+    my_car = Car("Toyota", "Corolla")
+    print(f"My car is a {my_car.brand} {my_car.model}.")
+
+43. Defining and Using a Method in a Class
+    class Circle:
+        pi = 3.14159
+        def __init__(self, radius):
+            self.radius = radius
+        def area(self):
+            return self.pi * (self.radius  2)
+    circle = Circle(10)
+    print(f"The area of the circle is {circle.area():.2f}.")
+
+44. Simple Exception Handling
+    try:
+        number = int(input("Enter a number: "))
+        print(f"You entered {number}.")
+    except ValueError:
+        print("That was not a valid number.")
+
+45. Using the `zip` Function
+    names = ["Anna", "Bob", "Charlie"]
+    scores = [95, 75, 85]
+    for name, score in zip(names, scores):
+        print(f"{name} scored {score}.")
+
+46. Reading Lines from a File
+    with open("data.txt", "r") as file:
+        for line in file:
+            print(line.strip())
+
+47. Using List Slicing
+    numbers = [10, 20, 30, 40, 50]
+    middle = numbers[1:4]
+    print(f"Middle three numbers: {middle}.")
+
+48. Checking Prime Number
+    def is_prime(num):
+        if num < 2:
+            return False
+        for i in range(2, int(num0.5) + 1):
+            if num % i == 0:
+                return False
+        return True
+    number = 29
+    print(f"{number} is a prime number: {is_prime(number)}.")
+
+49. Reversing a List
+    numbers = [5, 10, 15, 20, 25]
+    reversed_list = numbers[::-1]
+    print("Reversed List:", reversed_list)
+
+50. Filtering a List
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+    print("Even numbers:", even_numbers)
+
+51. Simple For Loop
+    for i in range(5):
+        print(i)
+
+52. Iterating Over Dictionary Items
+    person = {"name": "John", "age": 30, "city": "New York"}
+    for key, value in person.items():
+        print(f"{key}: {value}")
+
+53. Using the `map` Function
+    def square(number):
+        return number  2
+    numbers = [1, 2, 3, 4, 5]
+    squared_numbers = list(map(square, numbers))
+    print("Squared numbers:", squared_numbers)
+
+54. Nested Loops
+    for i in range(1, 4):
+        for j in range(1, 4):
+            print(f"{i}, {j}")
+
+55. Calculating Factorial with Recursion
+    def factorial(n):
+        if n == 1:
+            return 1
+        else:
+            return n * factorial(n-1)
+    print("Factorial of 5:", factorial(5))
+
+56. Using the `enumerate` Function in a List
+    groceries = ["bread", "milk", "butter"]
+    for index, item in enumerate(groceries):
+        print(index, item)
+
+57. Creating a Dictionary Dynamically
+    keys = ['one', 'two', 'three']
+    values = [1, 2, 3]
+    my_dict = dict(zip(keys, values))
+    print(my_dict)
+
+58. Using `*args` in Functions
+    def add_all(*args):
+        return sum(args)
+    print("Sum:", add_all(1, 2, 3, 4))
+
+59. Using `kwargs` in Functions
+    def print_info(kwargs):
+        for key, value in kwargs.items():
+            print(f"{key}: {value}")
+    print_info(name="John", age=29, city="New York")
+
+60. Finding Minimum in a List
+    numbers = [5, 3, 9, 1, 10]
+    print("Minimum number:", min(numbers))
+
+61. Checking for Palindrome Strings
+    def is_palindrome(s):
+        return s == s[::-1]
+    string = "radar"
+    print(f"Is '{string}' a palindrome? {is_palindrome(string)}")
+
+62. Using Default Arguments in Functions
+    def greet(name, msg="Hello"):
+        print(f"{msg}, {name}!")
+    greet("Alice")
+    greet("Bob", "Good morning")
+
+63. Simple Interest Calculation
+    def calculate_simple_interest(p, r, t):
+        return (p * r * t) / 100
+    print("Simple Interest:", calculate_simple_interest(1000, 5, 3))
+
+64. Concatenating and Printing Strings in a List
+    words = ["Learning", "Python", "is", "fun!"]
+    sentence = " ".join(words)
+    print(sentence)
+
+65. Creating a Simple Counter with a Dictionary
+    words = ["apple", "banana", "apple", "orange", "banana", "banana"]
+    counter = {}
+    for word in words:
+        if word in counter:
+            counter[word] += 1
+        else:
+            counter[word] = 1
+    print(counter)
+
+66. Defining a Basic Enum
+    from enum import Enum
+    class Color(Enum):
+        RED = 1
+        GREEN = 2
+        BLUE = 3
+    print("Color.RED:", Color.RED)
+
+67. Swapping Variables
+    a = 5
+    b = 10
+    a, b = b, a
+    print("a:", a, "b:", b)
+
+68. Finding the Sum of Numbers in a Range
+    total = sum(range(1, 11))  # Sum of numbers from 1 to 10
+    print("Total sum:", total)
+
+69. Multi-line String
+    text = """
+    Hello,
+    Python
+    Learner!
+    """
+    print(text)
+
+70. Iterating Over a String
+    s = "Python"
+    for char in s:
+        print(char)
+
+71. Using Global Variables
+    counter = 0
+    def update_counter():
+        global counter
+        counter += 1
+    update_counter()
+    print("Counter:", counter)
+
+72. Basic File Appending
+    with open("log.txt", "a") as file:
+        file.write("New entry!\n")
+
+73. Removing Items from a Set
+    numbers = {1, 2, 3, 4, 5}
+    numbers.remove(3)
+    print("Updated set:", numbers)
+
+74. Unpacking a List
+    numbers = [1, 2, 3]
+    a, b, c = numbers
+    print("a:", a, "b:", b, "c:", c)
+
+75. Using the `any` and `all` Functions
+    conditions = [True, False, True]
+    print("Any true?", any(conditions))
+    print("All true?", all(conditions))
+
+76. Creating a Multi-dimensional List (Matrix)
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    print("Middle row:", matrix[1])
+
+77. Using a Dictionary to Store a Switch Statement
+    def switch_case(argument):
+        switcher = {
+            1: "January",
+            2: "February",
+            3: "March",
+        }
+        return switcher.get(argument, "Invalid month")
+    print("Month:", switch_case(2))
+
+78. Using `else` Clause with Loops
+    for i in range(3):
+        print(i)
+    else:
+        print
